@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kawaii Weekly Meal Plan 🌸</title>
+  <style>
+    :root {
+      --bg-light: linear-gradient(to bottom right, #ffe6f0, #e0f7fa);
+      --bg-dark: #2e2e2e;
+      --text-dark: #ffffff;
+      --box-bg-light: white;
+      --box-bg-dark: #3c3c3c;
+      --accent-pink: pink;
+      --accent-yellow: #ffeb3b;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: var(--bg-light);
+      color: #333;
+      transition: all 0.5s ease;
+    }
+    body.dark-mode {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+    header {
+      background-color: #ffb6c1;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      border-bottom: 4px dashed #ff69b4;
+      animation: fadeIn 2s ease;
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: var(--box-bg-light);
+      padding: 1.5rem;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 182, 193, 0.5);
+      transition: background 0.5s;
+    }
+    body.dark-mode .container {
+      background: var(--box-bg-dark);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+    .day {
+      margin-bottom: 2rem;
+      border: 2px dashed #ffb6c1;
+      padding: 1rem;
+      border-radius: 15px;
+      background-color: #fff0f5;
+      animation: slideIn 1s ease;
+    }
+    body.dark-mode .day {
+      background-color: #4e4e4e;
+      border-color: #ff69b4;
+    }
+    .day h2 {
+      margin-top: 0;
+      color: #d63384;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    li::before {
+      content: "🍓 ";
+    }
+    .tip, .reminder {
+      margin-top: 2rem;
+      background-color: #ffe6e6;
+      padding: 1rem;
+      border-radius: 15px;
+      border: 2px dotted #ff69b4;
+    }
+    body.dark-mode .tip {
+      background-color: #5a5a5a;
+      border-color: #ffeb3b;
+    }
+    body.dark-mode .reminder {
+      background-color: purple;
+      color: #ffe6e6;
+    }
+    .reminder {
+      background-color: #fffbe6;
+      color: #ff1493;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .toggle-btn, .dark-toggle {
+      display: block;
+      margin: 1rem auto;
+      padding: 0.7rem 1.2rem;
+      background-color: #ff69b4;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    .toggle-btn:hover, .dark-toggle:hover {
+      background-color: #ff1493;
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideIn {
+      0% { opacity: 0; transform: translateX(-50px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>🌟 Weekly Meal Plan for Clear Skin & Weight Loss 🌟</header>
+  <div class="container">
+    <button class="toggle-btn" onclick="toggleDays()">🍱 Toggle Days</button>
+    <button class="dark-toggle" onclick="toggleDarkMode()">🌃 Toggle Dark Mode</button>
+    <div id="mealPlan">
+      <div class="day">
+        <h2>Day 1 (Monday)</h2>
+        <ul>
+          <li><strong>Breakfast:</strong> Greek yogurt + strawberries + sunflower seeds</li>
+          <li><strong>Lunch:</strong> Grilled chicken + white rice + kimchi</li>
+          <li><strong>Snack:</strong> Apple slices</li>
+          <li><strong>Dinner:</strong> Baked eggs + sautéed veggies</li>
+          <li><strong>Treat:</strong> Small bowl of mac & cheese</li>
+        </ul>
+      </div>
+      <div class="day">
+        <h2>Day 2 (Tuesday)</h2>
+        <ul>
+          <li><strong>Breakfast:</strong> 2 mini pancakes + 1 tsp maple syrup + kiwi slices</li>
+          <li><strong>Lunch:</strong> Grilled chicken lettuce wraps or chicken sandwich</li>
+          <li><strong>Snack:</strong> Orange wedges + sunflower seeds</li>
+          <li><strong>Dinner:</strong> Chickpeas + rice bowl + veggies</li>
+        </ul>
+      </div>
+      <div class="day">
+        <h2>Day 3 (Wednesday)</h2>
+        <ul>
+          <li><strong>Breakfast:</strong> Scrambled eggs + apple</li>
+          <li><strong>Lunch:</strong> Chicken + simple salad (drizzle olive oil or lemon juice)</li>
+          <li><strong>Snack:</strong> Greek yogurt (1 small cup)</li>
+          <li><strong>Dinner:</strong> Kimchi fried rice with egg</li>
+          <li><strong>Treat:</strong> Small cup of diluted lemonade</li>
+        </ul>
+      </div>
+      <div class="day">
+        <h2>Day 4 (Thursday)</h2>
+        <ul>
+          <li><strong>Breakfast:</strong> 2 pancakes + kiwi</li>
+          <li><strong>Lunch:</strong> Rice + groundnut + veggie stir fry</li>
+          <li><strong>Snack:</strong> Kiwi + sunflower seeds</li>
+          <li><strong>Dinner:</strong> Baked chicken + steamed veggies</li>
+          <li><strong>Treat:</strong> 1/2 portion buldak carbonara ramen</li>
+        </ul>
+      </div>
+      <div class="day">
+        <h2>Day 5 (Friday)</h2>
+        <ul>
+          <li><strong>Breakfast:</strong> Greek yogurt + small portion of Cerelac</li>
+          <li><strong>Lunch:</strong> Egg sandwich (1 slice savory bread) + apple</li>
+          <li><strong>Snack:</strong> Strawberries</li>
+          <li><strong>Dinner:</strong> Grilled chicken + rice + kimchi</li>
+        </ul>
+      </div>
+      <div class="day">
+        <h2>Day 6 (Saturday)</h2>
+        <ul>
+          <li><strong>Breakfast:</strong> Pancakes + strawberries or orange slices</li>
+          <li><strong>Lunch:</strong> Mac & cheese (small bowl) + side salad</li>
+          <li><strong>Snack:</strong> Kiwi + Greek yogurt</li>
+          <li><strong>Dinner:</strong> Chicken + rice or chickpeas</li>
+        </ul>
+      </div>
+      <div class="day">
+        <h2>Day 7 (Sunday)</h2>
+        <ul>
+          <li><strong>Breakfast:</strong> Eggs + fruit + small slice butter bread</li>
+          <li><strong>Lunch:</strong> 1/2 pack buldak ramen + boiled egg + kimchi</li>
+          <li><strong>Snack:</strong> Orange slices</li>
+          <li><strong>Dinner:</strong> Chickpea stew (or chicken) + rice</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tip">
+      💧 Drink 6–8 cups of water daily. Change pillowcases every 3–4 days. Avoid picking at breakouts. Eat mindfully — enjoy your meals!
+    </div>
+    <div class="reminder">
+      ✨ You’re glowing already! Stick to your plan, take deep breaths, and be patient with your skin. You’ve got this! ✨
+    </div>
+  </div>
+  <script>
+    function toggleDays() {
+      const plan = document.getElementById("mealPlan");
+      plan.style.display = plan.style.display === "none" ? "block" : "none";
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+</body>
+</html>
